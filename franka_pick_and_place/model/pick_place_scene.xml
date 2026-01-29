@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<mujoco model="franka_panda_pick_place">
+  <include file="panda.xml"/>
+
+  <worldbody>
+    <!-- Ground plane -->
+    <geom name="ground" type="plane" size="2 2 0.1" pos="0 0 -0.1" rgba="0.9 0.9 0.9 1" friction="0.5"/>
+    
+    <!-- Red Boxes -->
+    <body name="red_box_0" pos="-0.3 0.0 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="1 0 0 1" friction="0.5"/>
+      <joint name="red_box_0_joint" type="free"/>
+    </body>
+    <body name="red_box_1" pos="-0.2 0.1 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="1 0 0 1" friction="0.5"/>
+      <joint name="red_box_1_joint" type="free"/>
+    </body>
+    <body name="red_box_2" pos="-0.35 0.1 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="1 0 0 1" friction="0.5"/>
+      <joint name="red_box_2_joint" type="free"/>
+    </body>
+    
+    <!-- Blue Boxes -->
+    <body name="blue_box_0" pos="-0.3 -0.1 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="0 0 1 1" friction="0.5"/>
+      <joint name="blue_box_0_joint" type="free"/>
+    </body>
+    <body name="blue_box_1" pos="-0.2 -0.2 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="0 0 1 1" friction="0.5"/>
+      <joint name="blue_box_1_joint" type="free"/>
+    </body>
+    <body name="blue_box_2" pos="-0.35 -0.2 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="0 0 1 1" friction="0.5"/>
+      <joint name="blue_box_2_joint" type="free"/>
+    </body>
+    
+    <!-- Green Boxes -->
+    <body name="green_box_0" pos="0.2 0.0 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="0 1 0 1" friction="0.5"/>
+      <joint name="green_box_0_joint" type="free"/>
+    </body>
+    <body name="green_box_1" pos="0.25 0.1 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="0 1 0 1" friction="0.5"/>
+      <joint name="green_box_1_joint" type="free"/>
+    </body>
+    <body name="green_box_2" pos="0.3 0.1 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="0 1 0 1" friction="0.5"/>
+      <joint name="green_box_2_joint" type="free"/>
+    </body>
+    
+    <!-- Yellow Boxes -->
+    <body name="yellow_box_0" pos="0.2 -0.1 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="1 1 0 1" friction="0.5"/>
+      <joint name="yellow_box_0_joint" type="free"/>
+    </body>
+    <body name="yellow_box_1" pos="0.25 -0.2 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="1 1 0 1" friction="0.5"/>
+      <joint name="yellow_box_1_joint" type="free"/>
+    </body>
+    <body name="yellow_box_2" pos="0.3 -0.2 0.05">
+      <inertial mass="0.15" pos="0 0 0" diaginertia="0.0003 0.0003 0.0003"/>
+      <geom type="box" size="0.035 0.035 0.035" rgba="1 1 0 1" friction="0.5"/>
+      <joint name="yellow_box_2_joint" type="free"/>
+    </body>
+    
+    <!-- Red Bucket -->
+    <body name="red_bucket" pos="0.6 0.6 0.1">
+      <inertial mass="0.5" pos="0 0 0.08" diaginertia="0.001 0.001 0.001"/>
+      <geom name="red_bucket_bottom" type="box" size="0.15 0.15 0.01" pos="0 0 0" rgba="1 0 0 0.5"/>
+      <geom name="red_bucket_wall1" type="box" size="0.15 0.01 0.12" pos="0 0.15 0.08" rgba="1 0 0 0.5"/>
+      <geom name="red_bucket_wall2" type="box" size="0.15 0.01 0.12" pos="0 -0.15 0.08" rgba="1 0 0 0.5"/>
+      <geom name="red_bucket_wall3" type="box" size="0.01 0.15 0.12" pos="0.15 0 0.08" rgba="1 0 0 0.5"/>
+      <geom name="red_bucket_wall4" type="box" size="0.01 0.15 0.12" pos="-0.15 0 0.08" rgba="1 0 0 0.5"/>
+    </body>
+    
+    <!-- Blue Bucket -->
+    <body name="blue_bucket" pos="-0.6 0.6 0.1">
+      <inertial mass="0.5" pos="0 0 0.08" diaginertia="0.001 0.001 0.001"/>
+      <geom name="blue_bucket_bottom" type="box" size="0.15 0.15 0.01" pos="0 0 0" rgba="0 0 1 0.5"/>
+      <geom name="blue_bucket_wall1" type="box" size="0.15 0.01 0.12" pos="0 0.15 0.08" rgba="0 0 1 0.5"/>
+      <geom name="blue_bucket_wall2" type="box" size="0.15 0.01 0.12" pos="0 -0.15 0.08" rgba="0 0 1 0.5"/>
+      <geom name="blue_bucket_wall3" type="box" size="0.01 0.15 0.12" pos="0.15 0 0.08" rgba="0 0 1 0.5"/>
+      <geom name="blue_bucket_wall4" type="box" size="0.01 0.15 0.12" pos="-0.15 0 0.08" rgba="0 0 1 0.5"/>
+    </body>
+    
+    <!-- Green Bucket -->
+    <body name="green_bucket" pos="0.6 -0.6 0.1">
+      <inertial mass="0.5" pos="0 0 0.08" diaginertia="0.001 0.001 0.001"/>
+      <geom name="green_bucket_bottom" type="box" size="0.15 0.15 0.01" pos="0 0 0" rgba="0 1 0 0.5"/>
+      <geom name="green_bucket_wall1" type="box" size="0.15 0.01 0.12" pos="0 0.15 0.08" rgba="0 1 0 0.5"/>
+      <geom name="green_bucket_wall2" type="box" size="0.15 0.01 0.12" pos="0 -0.15 0.08" rgba="0 1 0 0.5"/>
+      <geom name="green_bucket_wall3" type="box" size="0.01 0.15 0.12" pos="0.15 0 0.08" rgba="0 1 0 0.5"/>
+      <geom name="green_bucket_wall4" type="box" size="0.01 0.15 0.12" pos="-0.15 0 0.08" rgba="0 1 0 0.5"/>
+    </body>
+    
+    <!-- Yellow Bucket -->
+    <body name="yellow_bucket" pos="-0.6 -0.6 0.1">
+      <inertial mass="0.5" pos="0 0 0.08" diaginertia="0.001 0.001 0.001"/>
+      <geom name="yellow_bucket_bottom" type="box" size="0.15 0.15 0.01" pos="0 0 0" rgba="1 1 0 0.5"/>
+      <geom name="yellow_bucket_wall1" type="box" size="0.15 0.01 0.12" pos="0 0.15 0.08" rgba="1 1 0 0.5"/>
+      <geom name="yellow_bucket_wall2" type="box" size="0.15 0.01 0.12" pos="0 -0.15 0.08" rgba="1 1 0 0.5"/>
+      <geom name="yellow_bucket_wall3" type="box" size="0.01 0.15 0.12" pos="0.15 0 0.08" rgba="1 1 0 0.5"/>
+      <geom name="yellow_bucket_wall4" type="box" size="0.01 0.15 0.12" pos="-0.15 0 0.08" rgba="1 1 0 0.5"/>
+    </body>
+  </worldbody>
+</mujoco>

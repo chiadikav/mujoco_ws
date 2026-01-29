@@ -2,6 +2,9 @@
 
 Training a Franka Emika Panda robot to pick colored boxes and place them in matching colored buckets using reinforcement learning (PPO).
 
+![](./model/panda.png)
+
+
 ## Project Structure
 
 ```
